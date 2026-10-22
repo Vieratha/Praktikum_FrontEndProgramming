@@ -3,11 +3,14 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+//Ini bagian informasi website pada browser dan mesin pencari
 export const metadata: Metadata = {
   title: "Machaé | Matcha & Dessert Kitchen",
-  description: "Discover matcha drinks and delightful desserts at Machaé.",
+  description:
+    "Discover thoughtfully crafted matcha drinks and delightful desserts at Machaé.",
 };
 
+//Ini bagian layout utama yang digunakan semua halaman
 export default function RootLayout({
   children,
 }: Readonly<{
