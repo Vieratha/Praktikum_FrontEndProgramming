@@ -21,7 +21,7 @@ export default async function ProductDetailPage({
   const relatedProducts = products.filter((item) => item.slug !== product.slug);
 
   return (
-    <main className="product-detail-page">
+    <div className="product-detail-page">
       {/*Ini bagian navigasi halaman*/}
       <div className="detail-breadcrumb">
         <Link href="/">Home</Link>
@@ -106,6 +106,6 @@ export default async function ProductDetailPage({
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

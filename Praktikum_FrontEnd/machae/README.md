@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Machaé
 
-## Getting Started
+Machaé adalah website untuk brand matcha dan dessert yang dibuat sebagai project praktikum Front-End Programming. Website ini dibangun menggunakan Next.js App Router, React, TypeScript, dan CSS.
 
-First, run the development server:
+## Fitur
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Halaman Home, About, Menu, Contact, dan detail produk.
+- _Dynamic routing_ untuk halaman detail produk melalui route `/menu/[slug]`.
+- Komponen yang dapat digunakan kembali, yaitu `Navbar`, `Footer`, dan `ProductCard`.
+- Navigasi internal menggunakan `Link` dari `next/link`.
+- Penanda tautan aktif pada navigasi menggunakan `usePathname`.
+- Tata letak responsif untuk berbagai ukuran layar.
+- Data produk dikelola terpusat di `data/products.ts`.
+
+## Halaman
+
+| Halaman       | Route          | Keterangan                       |
+| ------------- | -------------- | -------------------------------- |
+| Home          | `/`            | Halaman utama Machaé             |
+| About         | `/about`       | Informasi tentang Machaé         |
+| Menu          | `/menu`        | Daftar produk matcha dan dessert |
+| Detail Produk | `/menu/[slug]` | Detail produk berdasarkan slug   |
+| Contact       | `/contact`     | Informasi kontak                 |
+
+Slug produk yang tersedia:
+
+- `machae-cloud` — Machaé Cloud
+- `jade-whisper` — Jade Whisper
+- `velvet-whisk` — Velvet Whisk
+
+## Teknologi
+
+- [Next.js](https://nextjs.org/) — framework React dan sistem routing.
+- [React](https://react.dev/) — pembangunan antarmuka pengguna.
+- [TypeScript](https://www.typescriptlang.org/) — JavaScript dengan dukungan tipe data.
+- CSS — pengaturan tampilan dan desain responsif.
+- ESLint — pemeriksaan kode.
+
+## Struktur Folder
+
+```text
+machae/
+├── app/
+│   ├── about/
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── menu/
+│   │   ├── [slug]/
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.module.css
+│   └── page.tsx
+├── components/
+│   ├── Footer.tsx
+│   ├── Navbar.tsx
+│   └── ProductCard.tsx
+├── data/
+│   └── products.ts
+├── public/
+│   └── logo.png
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cara Menjalankan Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pastikan Node.js dan npm sudah terpasang. Buka terminal di folder project `machae`, kemudian jalankan perintah berikut.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Instal dependensi:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Jalankan server pengembangan:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Buka [http://localhost:3000](http://localhost:3000) di browser.
+   Pada Windows PowerShell, jika perintah `npm` tidak berjalan seperti yang diharapkan, gunakan `npm.cmd` sebagai penggantinya, misalnya `npm.cmd run dev`.
 
-## Deploy on Vercel
+## Catatan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Machaé merupakan project praktikum akademik dengan konsep website brand matcha dan dessert.

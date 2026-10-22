@@ -3,7 +3,7 @@ import { products } from "../../data/products";
 
 export default function MenuPage() {
   return (
-    <main className="menu-page">
+    <div className="menu-page">
       {/*Ini bagian judul halaman Menu*/}
       <section className="menu-heading">
         <p className="eyebrow">A LITTLE SOMETHING FOR EVERYONE</p>
@@ -29,6 +29,6 @@ export default function MenuPage() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }
