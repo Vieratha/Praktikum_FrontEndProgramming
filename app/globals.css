@@ -45,8 +45,9 @@ img {
   width: 100%;
   min-height: 96px;
   padding: 12px 8%;
-  background-color: var(--cream);
-  border-bottom: 1px solid var(--border);
+  background-color: #e9eadb;
+  border-bottom: 1px solid #d5d8c4;
+  box-shadow: 0 3px 12px rgba(52, 55, 41, 0.05);
 }
 
 .navbar-brand {
@@ -73,22 +74,27 @@ img {
 .nav-link {
   display: inline-block;
   padding: 11px 18px;
+  border: 1px solid transparent;
   border-radius: 24px;
-  color: var(--olive);
+  color: #515638;
   font-size: 14px;
   letter-spacing: 0.3px;
   transition:
     background-color 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .nav-link:hover {
-  background-color: #eeecdf;
+  background-color: #daddc8;
+  border-color: #cbd0b7;
+  color: #343729;
 }
 
 .nav-link.active {
-  background-color: var(--olive);
-  color: var(--cream);
+  background-color: #515638;
+  border-color: #515638;
+  color: #ffffff;
 }
 
 /*Ini bagian tampilan utama halaman Home*/
@@ -273,7 +279,6 @@ img {
   transition: transform 0.4s ease;
 }
 
-.product-image-link:hover .product-image,
 .product-card:hover .product-image {
   transform: scale(1.04);
 }
@@ -295,7 +300,6 @@ img {
   padding: 0 22px;
 }
 
-.product-info h3,
 .product-card h3 {
   margin: 0 0 10px;
   color: var(--olive);
@@ -438,170 +442,6 @@ img {
   line-height: 1.8;
 }
 
-/*Ini bagian penyesuaian tampilan tablet*/
-@media (max-width: 800px) {
-  .navbar {
-    padding-right: 6%;
-    padding-left: 6%;
-  }
-
-  .hero {
-    gap: 30px;
-    padding: 50px 7%;
-  }
-
-  .hero-visual {
-    height: 340px;
-  }
-
-  .products-section {
-    padding: 60px 7%;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-
-  .product-info h3,
-  .product-card h3 {
-    font-size: 22px;
-  }
-
-  .footer {
-    padding-right: 7%;
-    padding-left: 7%;
-  }
-
-  .footer-main {
-    gap: 28px;
-  }
-}
-
-/*Ini bagian penyesuaian tampilan ponsel*/
-@media (max-width: 600px) {
-  .navbar {
-    min-height: auto;
-    padding: 12px 4%;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar-logo {
-    width: 125px;
-    height: 60px;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: center;
-    gap: 2px;
-  }
-
-  .nav-link {
-    padding: 9px 13px;
-    font-size: 13px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 42px 6%;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-  }
-
-  .hero-visual {
-    height: 320px;
-  }
-
-  .intro-section {
-    padding: 55px 7%;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .product-image-link {
-    aspect-ratio: 5 / 3;
-  }
-
-  .product-info h3,
-  .product-card h3 {
-    font-size: 24px;
-  }
-
-  .product-description {
-    min-height: 0;
-  }
-
-  .product-price {
-    margin-top: 18px;
-  }
-
-  .closing-section {
-    padding: 55px 7%;
-  }
-
-  .footer {
-    padding: 38px 7% 18px;
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 20px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 5px;
-  }
-}
-
-/*Ini bagian penyesuaian layar yang lebih kecil*/
-@media (max-width: 380px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero-visual {
-    height: 270px;
-  }
-
-  .product-info h3,
-  .product-card h3 {
-    font-size: 22px;
-  }
-
-  .product-card > .text-link {
-    margin-right: 18px;
-    margin-left: 18px;
-  }
-
-  .product-category {
-    margin-right: 18px;
-    margin-left: 18px;
-  }
-
-  .product-info {
-    padding-right: 18px;
-    padding-left: 18px;
-  }
-}
-
 /*Ini bagian pembungkus halaman Menu*/
 .menu-page {
   min-height: 60vh;
@@ -720,13 +560,6 @@ img {
   line-height: 1.2;
 }
 
-.detail-description {
-  margin-bottom: 28px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.9;
-}
-
 /*Ini bagian harga pada halaman detail*/
 .detail-price {
   margin-bottom: 28px;
@@ -746,59 +579,6 @@ img {
   font-size: 22px;
   font-weight: 600;
 }
-
-/*Ini bagian penyesuaian menu untuk tablet*/
-@media (max-width: 800px) {
-  .menu-page,
-  .product-detail-page {
-    padding-right: 7%;
-    padding-left: 7%;
-  }
-
-  .product-detail {
-    gap: 30px;
-  }
-}
-
-/*Ini bagian penyesuaian menu untuk ponsel*/
-@media (max-width: 600px) {
-  .menu-page {
-    padding: 45px 6% 60px;
-  }
-
-  .menu-heading {
-    margin-bottom: 38px;
-  }
-
-  .product-detail-page {
-    padding: 25px 6% 55px;
-  }
-
-  .detail-breadcrumb {
-    margin-bottom: 25px;
-  }
-
-  .product-detail {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .detail-image img {
-    aspect-ratio: 5 / 4;
-  }
-
-  .detail-content {
-    max-width: none;
-  }
-
-  .detail-content h1 {
-    font-size: 36px;
-  }
-}
-
-/* ==============================
-   INFORMASI DETAIL PRODUK
-============================== */
 
 /*Ini bagian deskripsi tambahan produk*/
 .detail-about {
@@ -857,10 +637,6 @@ img {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-
-/* ==============================
-   REKOMENDASI PRODUK
-============================== */
 
 /*Ini bagian pembungkus rekomendasi produk*/
 .related-section {
@@ -935,196 +711,6 @@ img {
 }
 
 /*Ini bagian informasi rekomendasi*/
-.related-info {
-  padding: 20px;
-}
-
-.related-info > p {
-  margin-bottom: 8px;
-  color: var(--olive-light);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-}
-
-.related-info h3 {
-  margin-bottom: 16px;
-  color: var(--olive);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  font-weight: normal;
-}
-
-.related-price-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-  color: var(--olive);
-  font-size: 12px;
-}
-
-.related-price-row span:first-child {
-  font-weight: bold;
-}
-
-.related-price-row span:last-child {
-  font-size: 11px;
-}
-
-/*Ini bagian penyesuaian rekomendasi untuk ponsel*/
-@media (max-width: 600px) {
-  .related-section {
-    margin-top: 60px;
-    padding-top: 40px;
-  }
-
-  .related-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .related-info {
-    padding: 16px;
-  }
-
-  .related-info h3 {
-    font-size: 20px;
-  }
-}
-
-/*Ini bagian deskripsi tambahan produk*/
-.detail-about {
-  margin-bottom: 25px;
-}
-
-.detail-about h2 {
-  margin-bottom: 10px;
-  color: var(--olive);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 21px;
-  font-weight: normal;
-}
-
-.detail-about p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
-}
-
-/*Ini bagian tombol pembelian dummy*/
-.detail-cart-button {
-  display: block;
-  width: 100%;
-  padding: 15px 20px;
-  border: 1px solid var(--olive);
-  background-color: var(--olive);
-  color: white;
-  font-family: inherit;
-  font-size: 13px;
-  cursor: not-allowed;
-  opacity: 0.78;
-}
-
-.detail-cart-button:disabled {
-  cursor: not-allowed;
-}
-
-/*Ini bagian keterangan fitur pembelian*/
-.detail-note {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.7;
-}
-
-.detail-back-link {
-  display: inline-block;
-  margin-top: 22px;
-  color: var(--olive);
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.detail-back-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-/*Ini bagian rekomendasi produk lainnya*/
-.related-section {
-  margin-top: 90px;
-  padding-top: 55px;
-  border-top: 1px solid var(--border);
-}
-
-.related-heading {
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.related-heading .eyebrow {
-  margin-bottom: 10px;
-}
-
-.related-heading h2 {
-  margin-bottom: 12px;
-  color: var(--olive);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(28px, 3vw, 36px);
-  font-weight: normal;
-}
-
-.related-heading > p:last-child {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.related-card {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background-color: var(--card-background);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.related-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(54, 65, 38, 0.08);
-}
-
-/*Ini bagian gambar rekomendasi produk*/
-.related-image {
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background-color: var(--soft-cream);
-}
-
-.related-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.related-card:hover .related-image img {
-  transform: scale(1.04);
-}
-
-/*Ini bagian informasi rekomendasi produk*/
 .related-info {
   padding: 20px;
 }
@@ -1406,8 +992,55 @@ img {
   line-height: 1.8;
 }
 
-/*Ini bagian penyesuaian halaman untuk tablet*/
+/*Ini bagian responsif untuk tablet*/
 @media (max-width: 800px) {
+  .navbar {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .hero {
+    gap: 30px;
+    padding: 50px 7%;
+  }
+
+  .hero-visual {
+    height: 340px;
+  }
+
+  .products-section {
+    padding: 60px 7%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .product-info h3,
+  .product-card h3 {
+    font-size: 22px;
+  }
+
+  .footer {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+
+  .footer-main {
+    gap: 28px;
+  }
+
+  .menu-page,
+  .product-detail-page {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+
+  .product-detail {
+    gap: 30px;
+  }
+
   .about-hero,
   .about-values,
   .contact-heading {
@@ -1438,8 +1071,149 @@ img {
   }
 }
 
-/*Ini bagian penyesuaian halaman untuk ponsel*/
+/*Ini bagian responsif untuk ponsel*/
 @media (max-width: 600px) {
+  .navbar {
+    min-height: auto;
+    padding: 12px 4%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-logo {
+    width: 125px;
+    height: 60px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 42px 6%;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-visual {
+    height: 320px;
+  }
+
+  .intro-section {
+    padding: 55px 7%;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .product-image-link {
+    aspect-ratio: 5 / 3;
+  }
+
+  .product-info h3,
+  .product-card h3 {
+    font-size: 24px;
+  }
+
+  .product-description {
+    min-height: 0;
+  }
+
+  .product-price {
+    margin-top: 18px;
+  }
+
+  .closing-section {
+    padding: 55px 7%;
+  }
+
+  .footer {
+    padding: 38px 7% 18px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .menu-page {
+    padding: 45px 6% 60px;
+  }
+
+  .menu-heading {
+    margin-bottom: 38px;
+  }
+
+  .product-detail-page {
+    padding: 25px 6% 55px;
+  }
+
+  .detail-breadcrumb {
+    margin-bottom: 25px;
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .detail-image img {
+    aspect-ratio: 5 / 4;
+  }
+
+  .detail-content {
+    max-width: none;
+  }
+
+  .detail-content h1 {
+    font-size: 36px;
+  }
+
+  .related-section {
+    margin-top: 60px;
+    padding-top: 40px;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .related-info {
+    padding: 16px;
+  }
+
+  .related-info h3 {
+    font-size: 20px;
+  }
+
   .about-hero,
   .contact-heading {
     padding: 50px 6%;
@@ -1476,22 +1250,35 @@ img {
   .contact-footer-note {
     padding: 45px 6%;
   }
+}
 
-  .related-section {
-    margin-top: 60px;
-    padding-top: 40px;
+/*Ini bagian responsif untuk ponsel kecil*/
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 36px;
   }
 
-  .related-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .hero-visual {
+    height: 270px;
   }
 
-  .related-info {
-    padding: 16px;
+  .product-info h3,
+  .product-card h3 {
+    font-size: 22px;
   }
 
-  .related-info h3 {
-    font-size: 20px;
+  .product-card > .text-link {
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  .product-category {
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  .product-info {
+    padding-right: 18px;
+    padding-left: 18px;
   }
 }
