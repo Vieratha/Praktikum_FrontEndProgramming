@@ -45,8 +45,8 @@ img {
   width: 100%;
   min-height: 96px;
   padding: 12px 8%;
-  background-color: #e9eadb;
-  border-bottom: 1px solid #d5d8c4;
+  background-color: #f4f2e9;
+  border-bottom: 1px solid #dfddcf;
   box-shadow: 0 3px 12px rgba(52, 55, 41, 0.05);
 }
 
@@ -76,7 +76,7 @@ img {
   padding: 11px 18px;
   border: 1px solid transparent;
   border-radius: 24px;
-  color: #515638;
+  color: var(--olive);
   font-size: 14px;
   letter-spacing: 0.3px;
   transition:
@@ -86,14 +86,14 @@ img {
 }
 
 .nav-link:hover {
-  background-color: #daddc8;
-  border-color: #cbd0b7;
-  color: #343729;
+  background-color: #eae8dc;
+  border-color: #e0dece;
+  color: var(--text);
 }
 
 .nav-link.active {
-  background-color: #515638;
-  border-color: #515638;
+  background-color: var(--olive);
+  border-color: var(--olive);
   color: #ffffff;
 }
 
