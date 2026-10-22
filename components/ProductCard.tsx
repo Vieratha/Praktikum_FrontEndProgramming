@@ -16,7 +16,6 @@ export default function ProductCard({ product }: { product: Product }) {
 
         <p className="product-description">{product.description}</p>
 
-        {/*Ini bagian harga dengan garis pemisah*/}
         <p className="product-price">{product.price}</p>
       </div>
 
