@@ -1,53 +1,75 @@
 "use client";
 
 import Carousel from "react-bootstrap/Carousel";
-import styles from "../app/page.module.css";
 
 interface Slide {
   title: string;
   subtitle: string;
   imageUrl: string;
+  buttonText: string;
+  buttonLink: string;
 }
 
 const slides: Slide[] = [
   {
-    title: "Uriel",
-    subtitle: "The Demon-like Judge of Fire",
-    imageUrl: "/images/uriel.png",
+    title: "A Little Matcha, A Lot of Happiness.",
+    subtitle:
+      "Thoughtfully crafted matcha to make your everyday moments more special.",
+    imageUrl: "/images/macha.avif",
+    buttonText: "Explore Our Collection",
+    buttonLink: "#menu",
   },
   {
-    title: "Han Sooyoung",
-    subtitle: "The Writer Who Shapes the Story",
-    imageUrl: "/images/hansooyoung.jpg",
+    title: "A Moment of Calm in Every Sip.",
+    subtitle:
+      "Discover the delicate taste of matcha, made with care and a little love.",
+    imageUrl: "/images/jadewhisper.avif",
+    buttonText: "Discover Our Story",
+    buttonLink: "#about",
   },
   {
-    title: "Yoo Sangah",
-    subtitle: "Grace in the Middle of Chaos",
-    imageUrl: "/images/yoosangah.webp",
+    title: "Sweetness Worth Slowing Down For.",
+    subtitle:
+      "From delightful desserts to signature drinks, find your little happiness here.",
+    imageUrl: "/images/cake.avif",
+    buttonText: "Get to Know Us",
+    buttonLink: "#contact",
   },
 ];
 
-export default function HeroSection() {
+const HeroSection = () => {
   return (
-    <section id="home" className={styles.heroSection}>
+    <section id="home" className="hero-section">
       <Carousel
         fade
         interval={4000}
         pause="hover"
-        className={styles.heroCarousel}
+        indicators={true}
+        controls={true}
+        className="machae-carousel"
       >
         {slides.map((slide, index) => (
-          <Carousel.Item key={slide.title}>
-            <div className={styles.heroSlide}>
+          <Carousel.Item key={index}>
+            <div className="hero-slide">
               <img
                 src={slide.imageUrl}
-                alt={`Banner ${index + 1}`}
-                className={styles.heroImage}
+                alt={`Machaé banner ${index + 1}`}
+                className="hero-image"
               />
-              <div className={styles.heroOverlay} />
-              <Carousel.Caption className={styles.heroCaption}>
+
+              <div className="hero-overlay"></div>
+
+              <Carousel.Caption className="hero-caption">
+                <p className="hero-eyebrow">MATCHA & DESSERT KITCHEN</p>
+
                 <h1>{slide.title}</h1>
-                <p>{slide.subtitle}</p>
+
+                <p className="hero-subtitle">{slide.subtitle}</p>
+
+                <a href={slide.buttonLink} className="hero-button">
+                  {slide.buttonText}
+                  <span>→</span>
+                </a>
               </Carousel.Caption>
             </div>
           </Carousel.Item>
@@ -55,4 +77,6 @@ export default function HeroSection() {
       </Carousel>
     </section>
   );
-}
+};
+
+export default HeroSection;
