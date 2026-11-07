@@ -8,23 +8,27 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+
       <main>
         <HeroSection />
-        {/* Ini bagian pengenalan Machaé */}
+
+        {/* Bagian pengenalan Machaé */}
         <section id="about" className="intro-section">
           <p className="section-label">OUR PHILOSOPHY</p>
+
           <h2>
             Little moments,
             <br />
             made more delightful.
           </h2>
+
           <p>
             From carefully crafted matcha drinks to delightful desserts, every
             creation is made to bring a little joy to your day.
           </p>
         </section>
 
-        {/* Bagian produk unggulan */}
+        {/* Bagian koleksi menu unggulan */}
         <section id="menu" className="menu-section">
           <div className="section-heading">
             <div>
@@ -50,28 +54,53 @@ export default function Home() {
             </div>
 
             <div className="product-card">
-              <img src="/images/jadewhisper.avif" alt="Jade Whisper" />
+              <img src="/images/jadewhisper.avif" alt="Tea and Cookies" />
 
               <div className="product-info">
                 <p>FRESH & LIGHT</p>
                 <h3>Jade Whisper</h3>
-                <span>A refreshing matcha with a smooth, earthy taste.</span>
+                <span>A comforting tea paired with delightful cookies.</span>
                 <strong>Rp30.000</strong>
               </div>
             </div>
 
             <div className="product-card">
-              <img src="/images/cake.avif" alt="Velvet Whisk" />
+              <img src="/images/cake.avif" alt="Chocolate Cake" />
 
               <div className="product-info">
-                <p>MATCHA DESSERT</p>
+                <p>HOUSE DESSERT</p>
                 <h3>Velvet Whisk</h3>
                 <span>
-                  A delicate dessert inspired by the richness of matcha.
+                  A delightful chocolate cake for a little indulgence.
                 </span>
                 <strong>Rp35.000</strong>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Bagian profil karakter kreatif Machaé */}
+        <section id="profile" className="profile-section">
+          <div className="profile-image">
+            <img src="/images/uriel.png" alt="Machaé Creative Muse" />
+          </div>
+
+          <div className="profile-content">
+            <p className="section-label">A LITTLE ABOUT THE CREATIVE SOUL</p>
+
+            <h2>
+              Meet the
+              <br />
+              Creative Curator.
+            </h2>
+
+            <p>
+              Every little detail at Machaé begins with a love for creativity,
+              thoughtful experiences, and the joy of sharing something special.
+              Meet the character behind our creative inspiration.
+            </p>
+
+            <span className="profile-name">The Creative Curator</span>
           </div>
         </section>
 

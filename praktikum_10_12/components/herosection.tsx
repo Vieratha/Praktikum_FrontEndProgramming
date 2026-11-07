@@ -22,7 +22,7 @@ const slides: Slide[] = [
   {
     title: "A Moment of Calm in Every Sip.",
     subtitle:
-      "Discover the delicate taste of matcha, made with care and a little love.",
+      "Discover comforting tea moments, made with care and a little love.",
     imageUrl: "/images/jadewhisper.avif",
     buttonText: "Discover Our Story",
     buttonLink: "#about",
@@ -30,10 +30,10 @@ const slides: Slide[] = [
   {
     title: "Sweetness Worth Slowing Down For.",
     subtitle:
-      "From delightful desserts to signature drinks, find your little happiness here.",
+      "Enjoy delightful desserts and little moments of happiness at Machaé.",
     imageUrl: "/images/cake.avif",
-    buttonText: "Get to Know Us",
-    buttonLink: "#contact",
+    buttonText: "Meet Our Curator",
+    buttonLink: "#profile",
   },
 ];
 
@@ -49,7 +49,7 @@ const HeroSection = () => {
         className="machae-carousel"
       >
         {slides.map((slide, index) => (
-          <Carousel.Item key={index}>
+          <Carousel.Item key={slide.imageUrl}>
             <div className="hero-slide">
               <img
                 src={slide.imageUrl}

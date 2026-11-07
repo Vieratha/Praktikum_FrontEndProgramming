@@ -8,33 +8,37 @@ import Navbar from "react-bootstrap/Navbar";
 
 function NavBar() {
   const [activeSection, setActiveSection] = useState("home");
+
   const navLinks = [
     { label: "Home", href: "#home" },
     { label: "Our Story", href: "#about" },
     { label: "Our Menu", href: "#menu" },
+    { label: "Profile", href: "#profile" },
     { label: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "menu", "contact"];
+      const sections = ["home", "about", "menu", "profile", "contact"];
+
+      const scrollPosition = window.scrollY + 170;
       let currentSection = "home";
 
       sections.forEach((section) => {
         const element = document.getElementById(section);
-        if (element) {
-          const position = element.getBoundingClientRect().top;
 
-          if (position <= 150) {
-            currentSection = section;
-          }
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = section;
         }
       });
 
       setActiveSection(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
     handleScroll();
 
     return () => {
@@ -49,10 +53,12 @@ function NavBar() {
           Machaé
           <span> MATCHA & DESSERT KITCHEN</span>
         </Navbar.Brand>
+
         <Navbar.Toggle
           aria-controls="machae-navbar"
           aria-label="Buka navigasi"
         />
+
         <Navbar.Collapse id="machae-navbar">
           <Nav className="ms-auto machae-nav">
             {navLinks.map((link) => {
@@ -64,7 +70,7 @@ function NavBar() {
                   key={link.href}
                   href={link.href}
                   className={isActive ? "active" : ""}
-                  aria-current={isActive ? "page" : undefined}
+                  aria-current={isActive ? "location" : undefined}
                 >
                   {link.label}
                 </Nav.Link>
