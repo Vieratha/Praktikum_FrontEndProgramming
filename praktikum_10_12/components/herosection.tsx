@@ -43,9 +43,10 @@ const HeroSection = () => {
       <Carousel
         fade
         interval={4000}
-        pause="hover"
+        pause={false}
         indicators={true}
         controls={true}
+        wrap={true}
         className="machae-carousel"
       >
         {slides.map((slide, index) => (

@@ -18,16 +18,36 @@ function NavBar() {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "about", "menu", "profile", "contact"];
+    const sections = ["home", "about", "menu", "profile", "contact"];
 
-      const scrollPosition = window.scrollY + 170;
+    const handleScroll = () => {
+      const navbar = document.querySelector(".machae-navbar");
+
+      const navbarBottom =
+        navbar instanceof HTMLElement
+          ? navbar.getBoundingClientRect().bottom
+          : 100;
+
+      const activationLine = navbarBottom + 25;
+
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPosition = window.scrollY + window.innerHeight;
+
+      if (scrollPosition >= documentHeight - 60) {
+        setActiveSection("contact");
+        return;
+      }
+
       let currentSection = "home";
 
       sections.forEach((section) => {
         const element = document.getElementById(section);
 
-        if (element && element.offsetTop <= scrollPosition) {
+        if (!element) return;
+
+        const sectionPosition = element.getBoundingClientRect().top;
+
+        if (sectionPosition <= activationLine) {
           currentSection = section;
         }
       });
@@ -39,10 +59,13 @@ function NavBar() {
       passive: true,
     });
 
+    window.addEventListener("resize", handleScroll);
+
     handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -60,17 +83,26 @@ function NavBar() {
         />
 
         <Navbar.Collapse id="machae-navbar">
-          <Nav className="ms-auto machae-nav">
+          <Nav
+            className="ms-auto machae-nav"
+            activeKey={activeSection}
+            onSelect={(selectedKey) => {
+              if (typeof selectedKey === "string") {
+                setActiveSection(selectedKey);
+              }
+            }}
+          >
             {navLinks.map((link) => {
               const section = link.href.replace("#", "");
-              const isActive = activeSection === section;
 
               return (
                 <Nav.Link
                   key={link.href}
                   href={link.href}
-                  className={isActive ? "active" : ""}
-                  aria-current={isActive ? "location" : undefined}
+                  eventKey={section}
+                  aria-current={
+                    activeSection === section ? "location" : undefined
+                  }
                 >
                   {link.label}
                 </Nav.Link>

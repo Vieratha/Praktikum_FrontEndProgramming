@@ -105,15 +105,64 @@ export default function Home() {
         </section>
 
         {/* Bagian penutup */}
-        <section id="contact" className="closing-section">
-          <p className="section-label">STAY A LITTLE LONGER</p>
+        <section id="contact" className="contact-section">
+          <div className="contact-inner">
+            {/* Informasi Contact */}
+            <div className="contact-content">
+              <p className="contact-eyebrow">
+                A LITTLE MESSAGE TO OUR CREATIVE MUSE
+              </p>
 
-          <h2>
-            Let’s make your day
-            <br />a little more special.
-          </h2>
+              <h2>
+                Send a Little
+                <br />
+                Hello to Uriel.
+              </h2>
 
-          <p>Discover a little sweetness in every sip and every bite.</p>
+              <p className="contact-description">
+                Have a question, a collaboration idea, or simply want to share a
+                little love for Machaé? Uriel would be delighted to hear from
+                you.
+              </p>
+
+              <div className="contact-details">
+                <div className="contact-item">
+                  <span className="contact-icon">☎</span>
+
+                  <div>
+                    <span className="contact-label">PHONE NUMBER</span>
+                    <p>+1863-4951-3149-999</p>
+                  </div>
+                </div>
+
+                <div className="contact-item">
+                  <span className="contact-icon">✉</span>
+
+                  <div>
+                    <span className="contact-label">EMAIL ADDRESS</span>
+                    <p>demonlikejudgeoffire@machekitchen.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="contact-signature">With a little love, Machaé.</p>
+            </div>
+
+            <div className="contact-visual">
+              <div className="contact-image">
+                <img
+                  src="/images/uriel.png"
+                  alt="Uriel - Machaé Creative Muse"
+                />
+              </div>
+
+              <div className="contact-caption">
+                <span>THE CREATIVE MUSE</span>
+                <strong>Uriel</strong>
+                <p>A little divine touch in every little moment.</p>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
